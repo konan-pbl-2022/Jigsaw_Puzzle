@@ -14,5 +14,6 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
         System.out.println("蘇鉄晟史");
+        System.out.println("塩村和輝");
     }
 }
