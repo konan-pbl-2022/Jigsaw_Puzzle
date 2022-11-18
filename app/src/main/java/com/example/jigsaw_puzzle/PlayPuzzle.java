@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PlayPuzzle extends AppCompatActivity {
+public class PlayPuzzle<Graphics> extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
