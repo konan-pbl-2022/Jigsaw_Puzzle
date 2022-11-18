@@ -26,25 +26,23 @@
         android:id="@+id/cont"
         android:layout_width="233dp"
         android:layout_height="76dp"
-        android:text="continue"
+        android:text="つづきから"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newgame"
-        app:layout_constraintVertical_bias="0.345"
-        tools:text="つづきから" />
+        app:layout_constraintVertical_bias="0.345" />
 
     <Button
         android:id="@+id/newgame"
         android:layout_width="233dp"
         android:layout_height="76dp"
-        android:text="startgame"
+        android:text="はじめから"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="0.436"
-        tools:text="はじめから" />
+        app:layout_constraintVertical_bias="0.436" />
 </androidx.constraintlayout.widget.ConstraintLayout>
