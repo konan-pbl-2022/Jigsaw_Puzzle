@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PlayPuzzle">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
