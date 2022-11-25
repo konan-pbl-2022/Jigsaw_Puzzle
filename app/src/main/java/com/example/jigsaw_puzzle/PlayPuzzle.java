@@ -40,25 +40,26 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
 
         //画像の取得
         Resources resources = getResources();
-        Bitmap image = BitmapFactory.decodeResource(resources, R.drawable.free_illustration);
+        Bitmap image = BitmapFactory.decodeResource(resources, R.drawable.illust1); //画像の変更
 
         int imageHeight = image.getHeight();    //縦
         int imageWidth = image.getWidth();   //横
 
         //分割リストの作成
-        int splitx = 3; //縦の分割
-        int splity = 4; //横の分割
+        int splitx = 4; //縦の分割数
+        int splity = 4; //横の分割数
         int TotalImageNum = splitx * splity;
         int x = 0;  //x座標
         int y = 0;  //y座標
 
+        //画像の画面表示
         Bitmap[] imageList = new Bitmap[TotalImageNum];
 
         TableLayout aaa = (TableLayout) findViewById(R.id.abc);
 
-        
         int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
 
+        //画像の切り取り
         for(int i = 0; i < TotalImageNum; i++){
             //行の変更毎にx座標を0に戻す
             if(i > 0 && i % splitx == 0){
@@ -68,12 +69,14 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
                 x += imageWidth / splitx;
             }
             imageList[i] = Bitmap.createBitmap(image, x, y, imageHeight/splitx, imageHeight/splity);
+
             ImageView splitImage = new ImageView(this);
             splitImage.setImageBitmap(imageList[i]);
-            aaa.addView(splitImage, new TableLayout.LayoutParams(WC, WC));
+            aaa.addView(splitImage, new TableLayout.LayoutParams(WC, 200));  //サイズの変更
 
         }
 
+        //マス目の表示
         GridLayout layout = new GridLayout(this);
         layout.setColumnCount(splitx);  //縦マス目の確保
         layout.setRowCount(splity); //横マス目の確保
