@@ -66,24 +66,25 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
         layout.setRowCount(splity); //横マス目の確保
 
 
+/*
         for(int j = 0; j < splitx; j++){
             for(int k = 0; k < splity; k++){
                 //グリッドレイアウトの位置指定
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams(GridLayout.spec(j), GridLayout.spec(k));
-                param.width = 100;
-                param.height = 100;
+                param.width = 10;
+                param.height = 10;
 
                 //配置文字
-                TextView tv = new TextView(this);
-                tv.setText(String.format("%4d", (j+1) * (k+1)));
+                //TextView tv = new TextView(this);
+                //tv.setText(String.format("%4d", (j+1) * (k+1)));
 
                 //グリッドレイアウトに追加
-                layout.addView(tv, param);
+                //layout.addView(tv, param);
             }
         }
         //画面にグリッドレイアウトを表示
         setContentView(layout);
-
+*/
     }
 
 
