@@ -6,7 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +54,11 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
 
         Bitmap[] imageList = new Bitmap[TotalImageNum];
 
+        TableLayout aaa = (TableLayout) findViewById(R.id.abc);
+
+        
+        int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
+
         for(int i = 0; i < TotalImageNum; i++){
             //行の変更毎にx座標を0に戻す
             if(i > 0 && i % splitx == 0){
@@ -58,6 +68,9 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
                 x += imageWidth / splitx;
             }
             imageList[i] = Bitmap.createBitmap(image, x, y, imageHeight/splitx, imageHeight/splity);
+            ImageView splitImage = new ImageView(this);
+            splitImage.setImageBitmap(imageList[i]);
+            aaa.addView(splitImage, new TableLayout.LayoutParams(WC, WC));
 
         }
 
