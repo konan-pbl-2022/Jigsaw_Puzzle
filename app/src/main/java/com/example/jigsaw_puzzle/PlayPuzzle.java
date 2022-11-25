@@ -6,7 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +53,9 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
         int y = 0;  //y座標
 
         Bitmap[] imageList = new Bitmap[TotalImageNum];
+        LinearLayout linearLayout = new LinearLayout(this);
+        setContentView(linearLayout);
+        int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
 
         for(int i = 0; i < TotalImageNum; i++){
             //行の変更毎にx座標を0に戻す
@@ -58,7 +66,9 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
                 x += imageWidth / splitx;
             }
             imageList[i] = Bitmap.createBitmap(image, x, y, imageHeight/splitx, imageHeight/splity);
-
+            ImageView splitImage = new ImageView(this);
+            splitImage.setImageBitmap(imageList[i]);
+            linearLayout.addView(splitImage, new TableLayout.LayoutParams(WC, WC));
         }
 
         GridLayout layout = new GridLayout(this);
@@ -66,24 +76,25 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
         layout.setRowCount(splity); //横マス目の確保
 
 
+/*
         for(int j = 0; j < splitx; j++){
             for(int k = 0; k < splity; k++){
                 //グリッドレイアウトの位置指定
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams(GridLayout.spec(j), GridLayout.spec(k));
-                param.width = 100;
-                param.height = 100;
+                param.width = 10;
+                param.height = 10;
 
                 //配置文字
-                TextView tv = new TextView(this);
-                tv.setText(String.format("%4d", (j+1) * (k+1)));
+                //TextView tv = new TextView(this);
+                //tv.setText(String.format("%4d", (j+1) * (k+1)));
 
                 //グリッドレイアウトに追加
-                layout.addView(tv, param);
+                //layout.addView(tv, param);
             }
         }
         //画面にグリッドレイアウトを表示
         setContentView(layout);
-
+*/
     }
 
 
