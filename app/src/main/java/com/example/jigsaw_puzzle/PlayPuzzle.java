@@ -53,8 +53,10 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
         int y = 0;  //y座標
 
         Bitmap[] imageList = new Bitmap[TotalImageNum];
-        LinearLayout linearLayout = new LinearLayout(this);
-        setContentView(linearLayout);
+
+        TableLayout aaa = (TableLayout) findViewById(R.id.abc);
+
+        
         int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
 
         for(int i = 0; i < TotalImageNum; i++){
@@ -68,7 +70,8 @@ public class PlayPuzzle<Graphics> extends AppCompatActivity {
             imageList[i] = Bitmap.createBitmap(image, x, y, imageHeight/splitx, imageHeight/splity);
             ImageView splitImage = new ImageView(this);
             splitImage.setImageBitmap(imageList[i]);
-            linearLayout.addView(splitImage, new TableLayout.LayoutParams(WC, WC));
+            aaa.addView(splitImage, new TableLayout.LayoutParams(WC, WC));
+
         }
 
         GridLayout layout = new GridLayout(this);
